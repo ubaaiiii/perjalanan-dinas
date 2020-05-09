@@ -32,9 +32,9 @@ class Database extends \CodeIgniter\Database\Config
 	public $default = [
 		'DSN'      => '',
 		'hostname' => 'localhost',
-		'username' => '',
+		'username' => 'root',
 		'password' => '',
-		'database' => '',
+		'database' => 'perjalanan_dinas',
 		'DBDriver' => 'MySQLi',
 		'DBPrefix' => '',
 		'pConnect' => false,
@@ -60,7 +60,7 @@ class Database extends \CodeIgniter\Database\Config
 	public $tests = [
 		'DSN'      => '',
 		'hostname' => '127.0.0.1',
-		'username' => '',
+		'username' => 'root',
 		'password' => '',
 		'database' => ':memory:',
 		'DBDriver' => 'SQLite3',

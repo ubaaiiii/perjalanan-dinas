@@ -21,7 +21,7 @@ class App extends BaseConfig
 	| environments.
 	|
 	*/
-	public $baseURL = 'http://localhost:8080/';
+	public $baseURL = 'http://localhost/perjalanan-dinas/';
 
 	/*
 	|--------------------------------------------------------------------------
@@ -50,7 +50,7 @@ class App extends BaseConfig
 	|
 	| WARNING: If you set this to 'PATH_INFO', URIs will always be URL-decoded!
 	*/
-	public $uriProtocol = 'REQUEST_URI';
+	public $uriProtocol = 'PATH_INFO';
 
 	/*
 	|--------------------------------------------------------------------------
@@ -99,7 +99,7 @@ class App extends BaseConfig
 	| dates with the date helper, and can be retrieved through app_timezone()
 	|
 	*/
-	public $appTimezone = 'America/Chicago';
+	public $appTimezone = 'Asia/Jakarta';
 
 	/*
 	|--------------------------------------------------------------------------
