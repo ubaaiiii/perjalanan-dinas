@@ -4,7 +4,11 @@ class Home extends BaseController
 {
 	public function index()
 	{
-		return view('welcome_message');
+		$data = array(
+				'judul' => 'Jenis Anggota',
+				'content' => 'dashboard',
+		);
+		return view('home',$data);
 	}
 
 	//--------------------------------------------------------------------
