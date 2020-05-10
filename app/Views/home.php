@@ -9,7 +9,7 @@
     <meta name="description" content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
     <meta name="keywords" content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="PIXINVENT">
-    <title>Perjalanan Dinas | <?=$judul;?></title>
+    <title>Perjalanan Dinas | <?=$lokasi;?></title>
     <link rel="apple-touch-icon" href="<?= base_url(); ?>/app-assets/images/ico/apple-icon-120.png">
     <link rel="shortcut icon" type="image/x-icon" href="<?= base_url(); ?>/app-assets/images/ico/business.png">
     <link href="<?= base_url(); ?>/app-assets/css/font.googleapis.com.min.css" rel="stylesheet">
@@ -43,6 +43,10 @@
     <!-- BEGIN: Custom CSS-->
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/assets/css/style.css">
     <!-- END: Custom CSS-->
+
+    <!-- BEGIN: Vendor JS-->
+    <script src="<?= base_url(); ?>/app-assets/vendors/js/vendors.min.js"></script>
+    <!-- BEGIN Vendor JS-->
 
 </head>
 <!-- END: Head-->
@@ -125,9 +129,9 @@
                                 <div class="user-nav d-sm-flex d-none"><span class="user-name text-bold-600">John Doe</span></div><span><img class="round" src="<?= base_url(); ?>/app-assets/images/portrait/small/avatar-s-11.jpg" alt="avatar" height="40" width="40"></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" href="page-user-profile.html"> <i class="feather icon-user"></i> Edit Profile</a>
+                                <a class="dropdown-item" href="<?= base_url('account_setting'); ?>"> <i class="feather icon-user"></i> Account Setting</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="auth-login.html"><i class="feather icon-power"></i> Logout</a>
+                                <a class="dropdown-item" href="<?= base_url('auth/logout'); ?>"><i class="feather icon-power"></i> Logout</a>
                             </div>
                         </li>
                     </ul>
@@ -231,23 +235,23 @@
             <div class="navbar-container main-menu-content" data-menu="menu-container">
                 <!-- include <?= base_url(); ?>/includes/mixins-->
                 <ul class="nav navbar-nav" id="main-menu-navigation" data-menu="menu-navigation">
-                    <li class="nav-item active" data-menu="dropdown"><a class="nav-link" href="<?= base_url('home'); ?>"><i class="feather icon-home"></i><span data-i18n="Home">Home</span></a>
+                    <li class="nav-item" data-menu="dropdown"><a class="nav-link" href="<?= base_url('home'); ?>"><i class="feather icon-home"></i><span data-i18n="Home">Home</span></a>
                     </li>
                     <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown"><i class="feather icon-package"></i><span data-i18n="Master">Master</span></a>
                         <ul class="dropdown-menu">
-                            <li data-menu=""><a class="dropdown-item" href="<?= base_url('jenis_anggota'); ?>" data-toggle="dropdown" data-i18n="Email"><i class="feather icon-user-check"></i>Jenis Anggota</a>
+                            <li data-menu=""><a class="dropdown-item" href="<?= base_url('home/jenis_anggota'); ?>" data-toggle="dropdown" data-i18n="Email"><i class="feather icon-user-check"></i>Jenis Anggota</a>
                             </li>
-                            <li data-menu=""><a class="dropdown-item" href="<?= base_url('jenis_perjalanan'); ?>" data-toggle="dropdown" data-i18n="Jenis Perjalanan"><i class="feather icon-map"></i>Jenis Perjalanan</a>
+                            <li data-menu=""><a class="dropdown-item" href="<?= base_url('home/jenis_perjalanan'); ?>" data-toggle="dropdown" data-i18n="Jenis Perjalanan"><i class="feather icon-map"></i>Jenis Perjalanan</a>
                             </li>
-                            <li data-menu=""><a class="dropdown-item" href="<?= base_url('jenis_kegiatan'); ?>" data-toggle="dropdown" data-i18n="Jenis Kegiatan"><i class="feather icon-check-square"></i>Jenis Kegiatan</a>
+                            <li data-menu=""><a class="dropdown-item" href="<?= base_url('home/jenis_kegiatan'); ?>" data-toggle="dropdown" data-i18n="Jenis Kegiatan"><i class="feather icon-check-square"></i>Jenis Kegiatan</a>
                             </li>
-                            <li data-menu=""><a class="dropdown-item" href="<?= base_url('data_anggota'); ?>" data-toggle="dropdown" data-i18n="Data Anggota"><i class="feather icon-users"></i>Data Anggota</a>
+                            <li data-menu=""><a class="dropdown-item" href="<?= base_url('home/data_anggota'); ?>" data-toggle="dropdown" data-i18n="Data Anggota"><i class="feather icon-users"></i>Data Anggota</a>
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item" data-menu="dropdown"><a class="nav-link" href="<?= base_url('monitoring'); ?>"><i class="feather icon-layout"></i><span data-i18n="Monitoring Data">Monitoring Data</span></a>
+                    <li class="nav-item" data-menu="dropdown"><a class="nav-link" href="<?= base_url('home/monitoring'); ?>"><i class="feather icon-layout"></i><span data-i18n="Monitoring Data">Monitoring Data</span></a>
                     </li>
-                    <li class="nav-item" data-menu="dropdown"><a class="nav-link" href="<?= base_url('laporan'); ?>"><i class="feather icon-file-text"></i><span data-i18n="Laporan">Laporan</span></a>
+                    <li class="nav-item" data-menu="dropdown"><a class="nav-link" href="<?= base_url('home/laporan'); ?>"><i class="feather icon-file-text"></i><span data-i18n="Laporan">Laporan</span></a>
                     </li>
                 </ul>
             </div>
@@ -261,6 +265,23 @@
         <div class="header-navbar-shadow"></div>
         <div class="content-wrapper">
             <div class="content-header row">
+              <?php if ($lokasi!="Home") { ?>
+              <div class="content-header-left col-md-9 col-12 mb-2">
+                  <div class="row breadcrumbs-top">
+                      <div class="col-12">
+                          <h2 class="content-header-title float-left mb-0" id="judul-halaman"></h2>
+                          <div class="breadcrumb-wrapper col-12">
+                              <ol class="breadcrumb">
+                                  <li class="breadcrumb-item"><a href="<?= base_url(); ?>">Home</a>
+                                  </li>
+                                  <li class="breadcrumb-item active"><?= $lokasi; ?>
+                                  </li>
+                              </ol>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            <?php } ?>
             </div>
             <div class="content-body">
 
@@ -274,10 +295,6 @@
     <div class="sidenav-overlay"></div>
     <div class="drag-target"></div>
 
-
-    <!-- BEGIN: Vendor JS-->
-    <script src="<?= base_url(); ?>/app-assets/vendors/js/vendors.min.js"></script>
-    <!-- BEGIN Vendor JS-->
 
     <!-- BEGIN: Page Vendor JS-->
     <script src="<?= base_url(); ?>/app-assets/vendors/js/ui/jquery.sticky.js"></script>
@@ -304,6 +321,11 @@
     <script src="<?= base_url(); ?>/app-assets/js/scripts/pages/dashboard-analytics.js"></script>
     <script src="<?= base_url(); ?>/app-assets/js/scripts/datatables/datatable.js"></script>
     <!-- END: Page JS-->
+    <script>
+      $(document).ready(function(){
+        $('li:contains(<?=$lokasi;?>)').addClass("active");
+      })
+    </script>
 
 </body>
 <!-- END: Body-->

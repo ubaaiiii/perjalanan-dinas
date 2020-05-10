@@ -5,7 +5,7 @@
             <div class="card">
                 <div class="card-content">
                     <div class="card-body">
-                        <button id="addRow" class="btn btn-primary mb-2"><i class="feather icon-user-plus"></i>&nbsp; Tambah Jenis Anggota</button>
+                        <button id="addRow" class="btn btn-primary mb-2"><i class="feather icon-user-plus"></i>&nbsp; Tambah Anggota</button>
                         <div class="table-responsive">
                             <table class="table add-rows" id="tabel-jenis-anggota">
                                 <thead>
@@ -37,7 +37,7 @@
 <!--/ Add rows table -->
 
 <script>
-  $('#judul-halaman').text('Tabel Jenis Anggota');
+  $('#judul-halaman').text('Tabel Data Anggota');
 
   $(document).ready(function(){
 
