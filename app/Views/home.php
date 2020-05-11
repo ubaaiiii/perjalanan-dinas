@@ -241,11 +241,11 @@
                         <ul class="dropdown-menu">
                             <li data-menu=""><a class="dropdown-item" href="<?= base_url('home/jenis_anggota'); ?>" data-toggle="dropdown" data-i18n="Email"><i class="feather icon-user-check"></i>Jenis Anggota</a>
                             </li>
-                            <li data-menu=""><a class="dropdown-item" href="<?= base_url('home/jenis_perjalanan'); ?>" data-toggle="dropdown" data-i18n="Jenis Perjalanan"><i class="feather icon-map"></i>Jenis Perjalanan</a>
-                            </li>
                             <li data-menu=""><a class="dropdown-item" href="<?= base_url('home/jenis_kegiatan'); ?>" data-toggle="dropdown" data-i18n="Jenis Kegiatan"><i class="feather icon-check-square"></i>Jenis Kegiatan</a>
                             </li>
                             <li data-menu=""><a class="dropdown-item" href="<?= base_url('home/data_anggota'); ?>" data-toggle="dropdown" data-i18n="Data Anggota"><i class="feather icon-users"></i>Data Anggota</a>
+                            </li>
+                            <li data-menu=""><a class="dropdown-item" href="<?= base_url('home/pertanyaan_keamanan'); ?>" data-toggle="dropdown" data-i18n="Data Anggota"><i class="feather icon-alert-circle"></i>Pertanyaan Keamanan</a>
                             </li>
                         </ul>
                     </li>

@@ -6,7 +6,7 @@
                 <div class="card-content">
                     <div class="card-body">
                         <button id="addRow" class="btn btn-primary mb-2" data-toggle="modal" data-backdrop="false" data-target="#backdrop">
-                          <i class="feather icon-plus"></i>&nbsp; Tambah Jenis Kegiatan
+                          <i class="feather icon-plus-circle"></i>&nbsp; Tambah Jenis Kegiatan
                         </button>
                         <div class="table-responsive">
                             <table class="table add-rows" id="tabel-jenis-anggota">

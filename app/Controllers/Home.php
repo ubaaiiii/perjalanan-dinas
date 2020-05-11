@@ -1,5 +1,7 @@
 <?php namespace App\Controllers;
 
+use App\Models\M_pertanyaan;
+
 class Home extends BaseController
 {
 	public function index()
@@ -16,15 +18,6 @@ class Home extends BaseController
 		$data = array(
 				'lokasi'	=> 'Jenis Anggota',
 				'content' => 'table/jenis_anggota',
-		);
-		return view('home',$data);
-	}
-
-	public function jenis_perjalanan()
-	{
-		$data = array(
-				'lokasi'	=> 'Jenis Perjalanan',
-				'content' => 'table/jenis_perjalanan',
 		);
 		return view('home',$data);
 	}
@@ -61,6 +54,17 @@ class Home extends BaseController
 		$data = array(
 				'lokasi'	=> 'Data Laporan',
 				'content' => 'laporan',
+		);
+		return view('home',$data);
+	}
+
+	public function pertanyaan_keamanan()
+	{
+		$model = new M_pertanyaan();
+		$data = array(
+				'dataPertanyaan'	=> $model->getPertanyaan(),
+				'lokasi'	=> 'Data Pertanyaan',
+				'content' => 'table/pertanyaan',
 		);
 		return view('home',$data);
 	}

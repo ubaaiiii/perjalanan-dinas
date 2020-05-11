@@ -15,6 +15,7 @@
                                         <th>Kode Kegiatan</th>
                                         <th>Jenis Kegiatan</th>
                                         <th>Lokasi Tujuan</th>
+                                        <th>Anggota</th>
                                         <th>Status</th>
                                         <th>Actions</th>
                                     </tr>
@@ -22,19 +23,52 @@
                                 <tbody>
                                     <tr>
                                         <th>1</th>
-                                        <th>KGT/JKT/2020-05/001</th>
+                                        <th>STDY/HELL/2020-05/001</th>
                                         <th>Study tour</th>
                                         <th>Going to Hell</th>
                                         <th>
+                                          <ul class="list-unstyled users-list m-0  d-flex align-items-center">
+                                            <li data-toggle="tooltip" data-popup="tooltip-custom" data-placement="bottom" data-original-title="Vinnie Mostowy" class="avatar pull-up">
+                                                <img class="media-object rounded-circle" src="<?= base_url(); ?>/app-assets/images/portrait/small/avatar-s-5.jpg" alt="Avatar" height="30" width="30">
+                                            </li>
+                                          </ul>
+                                        </th>
+                                        <th>
                                           <div class="badge badge-pill badge-light-primary mr-1 mb-1 text-uppercase block">Direktorat</div>
                                           <div class="progress progress-bar-primary progress-lg">
-                                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="20" aria-valuemin="20" aria-valuemax="100" style="width:20%"></div>
+                                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="20" aria-valuemax="100" style="width:25%"></div>
                                           </div>
                                         </th>
                                         <th>
-                                          <button type="button" class="btn btn-icon rounded-circle btn-outline-primary mr-1 mb-1 waves-effect waves-light"><i class="feather icon-search"></i></button>
-                                          <button type="button" class="btn btn-icon rounded-circle btn-outline-warning mr-1 mb-1 waves-effect waves-light"><i class="feather icon-edit"></i></button>
-                                          <button type="button" class="btn btn-icon rounded-circle btn-outline-success mr-1 mb-1 waves-effect waves-light"><i class="feather icon-check"></i></button>
+                                          <button type="button" class="btn btn-icon rounded-circle btn-outline-primary mr-1 mb-1 waves-effect waves-light" data-toggle="tooltip" data-placement="bottom" data-original-title="Lihat Detail"><i class="feather icon-search"></i></button>
+                                          <button type="button" class="btn btn-icon rounded-circle btn-outline-warning mr-1 mb-1 waves-effect waves-light" data-toggle="tooltip" data-placement="bottom" data-original-title="Ubah"><i class="feather icon-edit"></i></button>
+                                          <button type="button" class="btn btn-icon rounded-circle btn-outline-success mr-1 mb-1 waves-effect waves-light" data-toggle="tooltip" data-placement="bottom" data-original-title="Setujui"><i class="feather icon-check"></i></button>
+                                          <button type="button" class="btn btn-icon rounded-circle btn-outline-danger mr-1 mb-1 waves-effect waves-light" data-toggle="tooltip" data-placement="bottom" data-original-title="Revisi"><i class="feather icon-rotate-ccw"></i></button>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th>2</th>
+                                        <th>RAKERNAS/BDG/2020-04/010</th>
+                                        <th>Rapat Kerja Nasional</th>
+                                        <th>Bandung</th>
+                                        <th>
+                                          <ul class="list-unstyled users-list m-0  d-flex align-items-center">
+                                            <li data-toggle="tooltip" data-popup="tooltip-custom" data-placement="bottom" data-original-title="Elicia Rieske" class="avatar pull-up">
+                                                <img class="media-object rounded-circle" src="<?= base_url(); ?>/app-assets/images/portrait/small/avatar-s-7.jpg" alt="Avatar" height="30" width="30">
+                                            </li>
+                                          </ul>
+                                        </th>
+                                        <th>
+                                          <div class="badge badge-pill badge-light-primary mr-1 mb-1 text-uppercase block">Deputi</div>
+                                          <div class="progress progress-bar-primary progress-lg">
+                                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="10" aria-valuemax="100" style="width:75%"></div>
+                                          </div>
+                                        </th>
+                                        <th>
+                                          <button type="button" class="btn btn-icon rounded-circle btn-outline-primary mr-1 mb-1 waves-effect waves-light" data-toggle="tooltip" data-placement="bottom" data-original-title="Lihat Detail"><i class="feather icon-search"></i></button>
+                                          <button type="button" class="btn btn-icon rounded-circle btn-outline-warning mr-1 mb-1 waves-effect waves-light" data-toggle="tooltip" data-placement="bottom" data-original-title="Ubah"><i class="feather icon-edit"></i></button>
+                                          <button type="button" class="btn btn-icon rounded-circle btn-outline-success mr-1 mb-1 waves-effect waves-light" data-toggle="tooltip" data-placement="bottom" data-original-title="Setujui"><i class="feather icon-check"></i></button>
+                                          <button type="button" class="btn btn-icon rounded-circle btn-outline-danger mr-1 mb-1 waves-effect waves-light" data-toggle="tooltip" data-placement="bottom" data-original-title="Revisi"><i class="feather icon-rotate-ccw"></i></button>
                                         </th>
                                     </tr>
                                 </tbody>

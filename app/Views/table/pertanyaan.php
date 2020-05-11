@@ -1,3 +1,5 @@
+<?php var_dump($dataPertanyaan); ?>
+
 <!-- Add rows table -->
 <section id="add-row">
     <div class="row">
@@ -6,14 +8,14 @@
                 <div class="card-content">
                     <div class="card-body">
                         <button id="addRow" class="btn btn-primary mb-2" data-toggle="modal" data-backdrop="false" data-target="#backdrop">
-                          <i class="feather icon-plus"></i>&nbsp; Tambah Jenis Perjalanan
+                          <i class="feather icon-plus-circle"></i>&nbsp; Tambah Pertanyaan Keamanan
                         </button>
                         <div class="table-responsive">
                             <table class="table add-rows" id="tabel-jenis-anggota">
                                 <thead>
                                     <tr>
                                         <th>No.</th>
-                                        <th>Jenis Perjalanan</th>
+                                        <th>Pertanyaan</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -35,16 +37,16 @@
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
         <div class="modal-content">
             <div class="modal-header bg-primary white">
-                <h4 class="modal-title" id="myModalLabel4">Jenis Perjalanan Baru</h4>
+                <h4 class="modal-title" id="myModalLabel4">Buat Pertanyaan Baru</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <form action="#">
                 <div class="modal-body">
-                    <label>Jenis Perjalanan: </label>
+                    <label>Pertanyaan: </label>
                     <div class="form-group">
-                        <input type="text" name="jenis_perjalanan" placeholder="Jenis Perjalanan" class="form-control text-capitalize">
+                        <input type="text" name="pertanyaan" placeholder="Pertanyaan?" class="form-control text-capitalize">
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -58,7 +60,7 @@
 </div>
 
 <script>
-  $('#judul-halaman').text('Tabel Jenis Perjalanan');
+  $('#judul-halaman').text('Tabel Pertanyaan Keamanan');
 
   $(document).ready(function(){
 

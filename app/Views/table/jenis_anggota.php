@@ -12,13 +12,15 @@
                                 <thead>
                                     <tr>
                                         <th>No. </th>
+                                        <th>Kode Jenis Anggota</th>
                                         <th>Jenis Anggota</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <th>1.1</th>
-                                        <th>1.2</th>
+                                        <th>1</th>
+                                        <th>CPT</th>
+                                        <th>Captain</th>
                                     </tr>
                                 </tbody>
                             </table>
@@ -41,9 +43,13 @@
             </div>
             <form action="#">
                 <div class="modal-body">
+                    <label>Kode Jenis Anggota: </label>
+                    <div class="form-group">
+                        <input type="text" required name="kode_jenis_anggota" placeholder="Kode Jenis Anggota" class="form-control text-uppercase">
+                    </div>
                     <label>Jenis Anggota: </label>
                     <div class="form-group">
-                        <input type="text" name="jenis_anggota" placeholder="Jenis Anggota" class="form-control text-capitalize">
+                        <input type="text" required name="jenis_anggota" placeholder="Jenis Anggota" class="form-control text-capitalize">
                     </div>
                 </div>
                 <div class="modal-footer">
