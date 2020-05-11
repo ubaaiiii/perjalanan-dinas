@@ -47,4 +47,22 @@ class Home extends BaseController
 		return view('home',$data);
 	}
 
+	public function monitoring()
+	{
+		$data = array(
+				'lokasi'	=> 'Data Kegiatan',
+				'content' => 'table/data_kegiatan',
+		);
+		return view('home',$data);
+	}
+
+	public function laporan()
+	{
+		$data = array(
+				'lokasi'	=> 'Data Laporan',
+				'content' => 'laporan',
+		);
+		return view('home',$data);
+	}
+
 }
