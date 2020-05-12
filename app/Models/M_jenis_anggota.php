@@ -1,12 +1,12 @@
 <?php namespace App\Models;
 use CodeIgniter\Model;
 
-class M_pertanyaan extends Model
+class M_jenis_anggota extends Model
 {
-    protected $table = 'tb_pertanyaan';
-    protected $primaryKey = 'id_pertanyaan';
+    protected $table = 'tb_jenis_anggota';
+    protected $primaryKey = 'id_jenis_anggota';
 
-    public function getPertanyaan($id = null)
+    public function getJenisAnggota($id = null)
     {
         if($id === null){
             return $this->findAll();

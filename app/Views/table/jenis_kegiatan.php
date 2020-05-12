@@ -9,18 +9,15 @@
                           <i class="feather icon-plus-circle"></i>&nbsp; Tambah Jenis Kegiatan
                         </button>
                         <div class="table-responsive">
-                            <table class="table add-rows" id="tabel-jenis-anggota">
+                            <table class="table" id="tabel-jenis-anggota">
                                 <thead>
                                     <tr>
                                         <th>No.</th>
+                                        <th>Kode Kegiatan</th>
                                         <th>Jenis Kegiatan</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <th>1.1</th>
-                                        <th>1.2</th>
-                                    </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -42,11 +39,15 @@
                 </button>
             </div>
             <form action="#">
-                <div class="modal-body">
-                    <label>Jenis Kegiatan: </label>
-                    <div class="form-group">
-                        <input type="text" name="jenis_kegiatan" placeholder="Jenis Kegiatan" class="form-control text-capitalize">
-                    </div>
+                <div class="modal-body"><br>
+                  <fieldset class="form-label-group">
+                      <input type="text" class="form-control text-uppercase" name="kode-kegiatan" id="kode-kegiatan" maxlength="10" placeholder="Kode Kegiatan">
+                      <label for="kode-kegiatan">Kode Kegiatan :</label>
+                  </fieldset>
+                  <fieldset class="form-label-group">
+                      <input type="text" class="form-control text-capitalize" name="jenis-kegiatan" id="jenis-kegiatan" maxlength="25" placeholder="Jenis Kegiatan">
+                      <label for="jenis-kegiatan">Jenis Kegiatan :</label>
+                  </fieldset>
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary">Simpan</button>
@@ -62,6 +63,12 @@
   $('#judul-halaman').text('Tabel Jenis Kegiatan');
 
   $(document).ready(function(){
+    $('#kode-kegiatan').on('keypress',function(e) {
+      if(e.which == 32) {
+          e.preventDefault();
+      }
+    });
 
+    $('#tabel-jenis-anggota').DataTable();
   })
 </script>

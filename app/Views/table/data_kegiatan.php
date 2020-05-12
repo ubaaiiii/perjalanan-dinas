@@ -15,7 +15,7 @@
                                         <th>Kode Kegiatan</th>
                                         <th>Jenis Kegiatan</th>
                                         <th>Lokasi Tujuan</th>
-                                        <th>Anggota</th>
+                                        <th>Dibuat Oleh</th>
                                         <th>Status</th>
                                         <th>Actions</th>
                                     </tr>
@@ -31,6 +31,7 @@
                                             <li data-toggle="tooltip" data-popup="tooltip-custom" data-placement="bottom" data-original-title="Vinnie Mostowy" class="avatar pull-up">
                                                 <img class="media-object rounded-circle" src="<?= base_url(); ?>/app-assets/images/portrait/small/avatar-s-5.jpg" alt="Avatar" height="30" width="30">
                                             </li>
+                                            &nbsp;Vinnie Mostowy
                                           </ul>
                                         </th>
                                         <th>
@@ -56,6 +57,7 @@
                                             <li data-toggle="tooltip" data-popup="tooltip-custom" data-placement="bottom" data-original-title="Elicia Rieske" class="avatar pull-up">
                                                 <img class="media-object rounded-circle" src="<?= base_url(); ?>/app-assets/images/portrait/small/avatar-s-7.jpg" alt="Avatar" height="30" width="30">
                                             </li>
+                                            &nbsp;Elicia Rieske
                                           </ul>
                                         </th>
                                         <th>
