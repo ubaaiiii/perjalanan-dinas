@@ -8,20 +8,17 @@
                           <i class="feather icon-user-plus"></i>&nbsp; Tambah Jenis Anggota
                         </button>
                         <div class="table-responsive">
-                            <table class="table add-rows" id="tabel-jenis-anggota">
+                            <table class="table" id="tabel-jenis-anggota">
                                 <thead>
                                     <tr>
                                         <th>No. </th>
                                         <th>Kode Jenis Anggota</th>
                                         <th>Jenis Anggota</th>
+                                        <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <th>1</th>
-                                        <th>CPT</th>
-                                        <th>Captain</th>
-                                    </tr>
+
                                 </tbody>
                             </table>
                         </div>
@@ -41,31 +38,27 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="#">
+            <form id="form-submit">
                 <div class="modal-body">
                     <label>Kode Jenis Anggota: </label>
                     <div class="form-group">
-                        <input type="text" required name="kode_jenis_anggota" placeholder="Kode Jenis Anggota" class="form-control text-uppercase">
+                        <input hidden type="text" id="kode-awal" name="kode-awal" class="form-control text-uppercase">
+                        <input hidden type="text" id="tipe" name="tipe" value="save" class="form-control">
+                        <input type="text" required id="kode-jenis-anggota" name="kode-jenis-anggota" placeholder="Kode Jenis Anggota" class="form-control text-uppercase">
                     </div>
                     <label>Jenis Anggota: </label>
                     <div class="form-group">
-                        <input type="text" required name="jenis_anggota" placeholder="Jenis Anggota" class="form-control text-capitalize">
+                        <input type="text" required id="jenis-anggota" name="jenis-anggota" placeholder="Jenis Anggota" class="form-control text-capitalize">
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">Simpan</button>
-                    <button hidden type="button" id="btn-update" class="btn btn-success">Update</button>
-                    <button type="reset" id="btn-update" class="btn btn-warning">Reset</button>
+                    <button type="submit" id="btn-submit" class="btn btn-primary">Simpan</button>
+                    <button type="reset" id="btn-reset" class="btn btn-warning">Reset</button>
+                    <button hidden type="button" id="btn-cancel" data-dismiss="modal" class="btn btn-warning">Cancel</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
 
-<script>
-  $('#judul-halaman').text('Tabel Jenis Anggota');
-
-  $(document).ready(function(){
-
-  })
-</script>
+<script src="<?= base_url(); ?>/app-assets/js/process/jenis_anggota.js"></script>

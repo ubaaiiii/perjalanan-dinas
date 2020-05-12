@@ -46,8 +46,10 @@
     });
 
     // Tooltip Initialization
-    $('[data-toggle="tooltip"]').tooltip({
-      container: "body"
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip({
+        container : 'body'
+      });
     });
 
     // Top Navbars - Hide on Scroll

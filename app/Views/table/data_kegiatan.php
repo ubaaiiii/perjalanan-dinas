@@ -1,3 +1,82 @@
+<section id="statistics-card">
+    <div class="row">
+        <div class="col-xl-2 col-md-4 col-sm-6">
+            <div class="card text-center">
+                <div class="card-content">
+                    <div class="card-body">
+                        <div class="avatar bg-rgba-primary p-50 m-0 mb-1">
+                            <div class="avatar-content">
+                                <i class="feather icon-plus-square text-primary font-medium-5"></i>
+                            </div>
+                        </div>
+                        <h2 class="text-bold-700">36.9k</h2>
+                        <p class="mb-0 line-ellipsis">Baru Ditambahkan</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-2 col-md-4 col-sm-6">
+            <div class="card text-center">
+                <div class="card-content">
+                    <div class="card-body">
+                        <div class="avatar bg-rgba-warning p-50 m-0 mb-1">
+                            <div class="avatar-content">
+                                <i class="feather icon-check text-warning font-medium-5"></i>
+                            </div>
+                        </div>
+                        <h2 class="text-bold-700">12k</h2>
+                        <p class="mb-0 line-ellipsis">Disetujui Staf Deputi</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-2 col-md-4 col-sm-6">
+            <div class="card text-center">
+                <div class="card-content">
+                    <div class="card-body">
+                        <div class="avatar bg-rgba-info p-50 m-0 mb-1">
+                            <div class="avatar-content">
+                                <i class="feather icon-check-circle text-info font-medium-5"></i>
+                            </div>
+                        </div>
+                        <h2 class="text-bold-700">97.8k</h2>
+                        <p class="mb-0 line-ellipsis">Disetujui Deputi</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-2 col-md-4 col-sm-6">
+            <div class="card text-center">
+                <div class="card-content">
+                    <div class="card-body">
+                        <div class="avatar bg-rgba-success p-50 m-0 mb-1">
+                            <div class="avatar-content">
+                                <i class="feather icon-check-square text-success font-medium-5"></i>
+                            </div>
+                        </div>
+                        <h2 class="text-bold-700">26.8</h2>
+                        <p class="mb-0 line-ellipsis">Disetujui Gubernur</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-2 col-md-4 col-sm-6">
+            <div class="card text-center">
+                <div class="card-content">
+                    <div class="card-body">
+                        <div class="avatar bg-rgba-danger p-50 m-0 mb-1">
+                            <div class="avatar-content">
+                                <i class="feather icon-alert-triangle text-danger font-medium-5"></i>
+                            </div>
+                        </div>
+                        <h2 class="text-bold-700">689</h2>
+                        <p class="mb-0 line-ellipsis">Kegiatan Ditolak</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <section id="add-row">
     <div class="row">
         <div class="col-12">
@@ -28,7 +107,7 @@
                                         <th>Going to Hell</th>
                                         <th>
                                           <ul class="list-unstyled users-list m-0  d-flex align-items-center">
-                                            <li data-toggle="tooltip" data-popup="tooltip-custom" data-placement="bottom" data-original-title="Vinnie Mostowy" class="avatar pull-up">
+                                            <li class="avatar pull-up avatar-lg">
                                                 <img class="media-object rounded-circle" src="<?= base_url(); ?>/app-assets/images/portrait/small/avatar-s-5.jpg" alt="Avatar" height="30" width="30">
                                             </li>
                                             &nbsp;Vinnie Mostowy
@@ -54,7 +133,7 @@
                                         <th>Bandung</th>
                                         <th>
                                           <ul class="list-unstyled users-list m-0  d-flex align-items-center">
-                                            <li data-toggle="tooltip" data-popup="tooltip-custom" data-placement="bottom" data-original-title="Elicia Rieske" class="avatar pull-up">
+                                            <li class="avatar pull-up avatar-lg">
                                                 <img class="media-object rounded-circle" src="<?= base_url(); ?>/app-assets/images/portrait/small/avatar-s-7.jpg" alt="Avatar" height="30" width="30">
                                             </li>
                                             &nbsp;Elicia Rieske

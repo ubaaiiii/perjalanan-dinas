@@ -15,4 +15,19 @@ class M_jenis_anggota extends Model
         }
     }
 
+    public function simpan($data)
+    {
+        $query = $this->db->table($this->table)->insert($data);
+        return true;
+    }
+
+    public function hapus($id)
+    {
+        if($this->delete($id)) {
+          return true;
+        } else {
+          return false;
+        }
+    }
+
 }

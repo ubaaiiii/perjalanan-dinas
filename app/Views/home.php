@@ -22,6 +22,7 @@
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/app-assets/vendors/css/extensions/tether.min.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/app-assets/vendors/css/extensions/shepherd-theme-default.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/app-assets/vendors/css/forms/select/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/app-assets/vendors/css/extensions/sweetalert2.min.css">
     <!-- END: Vendor CSS-->
 
     <!-- BEGIN: Theme CSS-->
@@ -47,8 +48,23 @@
 
     <!-- BEGIN: Vendor JS-->
     <script src="<?= base_url(); ?>/app-assets/vendors/js/vendors.min.js"></script>
+    <script src="<?= base_url(); ?>/app-assets/vendors/js/ui/jquery.sticky.js"></script>
     <!-- BEGIN Vendor JS-->
 
+    <script>
+    function base_url() {
+      var pathparts = location.pathname.split('/');
+      if (location.host == 'localhost') {
+          var url = location.origin+'/'+pathparts[1].trim('/')+'/'; // http://localhost/myproject/
+      }else{
+          var url = location.origin; // http://stackoverflow.com
+      }
+      return url;
+    }
+    </script>
+    <?php
+      $_SERVER['CI_ENVIRONMENT'] = 'development';
+    ?>
 </head>
 <!-- END: Head-->
 
@@ -310,7 +326,6 @@
 
 
     <!-- BEGIN: Page Vendor JS-->
-    <script src="<?= base_url(); ?>/app-assets/vendors/js/ui/jquery.sticky.js"></script>
     <script src="<?= base_url(); ?>/app-assets/vendors/js/tables/datatable/pdfmake.min.js"></script>
     <script src="<?= base_url(); ?>/app-assets/vendors/js/tables/datatable/vfs_fonts.js"></script>
     <script src="<?= base_url(); ?>/app-assets/vendors/js/tables/datatable/datatables.min.js"></script>
@@ -324,6 +339,7 @@
     <script src="<?= base_url(); ?>/app-assets/vendors/js/extensions/shepherd.min.js"></script>
     <script src="<?= base_url(); ?>/app-assets/vendors/js/maxlength/bootstrap-maxlength.js"></script>
     <script src="<?= base_url(); ?>/app-assets/vendors/js/forms/select/select2.full.min.js"></script>
+    <script src="<?= base_url(); ?>/app-assets/vendors/js/extensions/sweetalert2.all.min.js"></script>
     <!-- END: Page Vendor JS-->
 
     <!-- BEGIN: Theme JS-->
@@ -336,11 +352,20 @@
     <script src="<?= base_url(); ?>/app-assets/js/scripts/pages/dashboard-analytics.js"></script>
     <script src="<?= base_url(); ?>/app-assets/js/scripts/datatables/datatable.js"></script>
     <script src="<?= base_url(); ?>/app-assets/js/scripts/forms/select/form-select2.js"></script>
+    <script src="<?= base_url(); ?>/app-assets/js/scripts/extensions/sweet-alerts.js"></script>
     <!-- END: Page JS-->
     <script>
       $(document).ready(function(){
         $('li:contains(<?=$lokasi;?>)').addClass("active");
         $('input[maxlength]').maxlength();
+
+        $('#backdrop').on('hidden.bs.modal', function() {
+            $('#btn-reset').click();
+            $('#btn-cancel').attr('hidden',true);
+            $('#btn-reset').removeAttr('hidden');
+            $('#tipe').val('save');
+            $('#btn-submit').html('Simpan');
+        });
       })
     </script>
 
