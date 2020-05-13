@@ -39,17 +39,17 @@
                 </button>
             </div>
             <form id="form-submit">
-                <div class="modal-body">
-                    <label>Kode Jenis Anggota: </label>
-                    <div class="form-group">
-                        <input hidden type="text" id="kode-awal" name="kode-awal" class="form-control text-uppercase">
-                        <input hidden type="text" id="tipe" name="tipe" value="save" class="form-control">
-                        <input type="text" required id="kode-jenis-anggota" name="kode-jenis-anggota" placeholder="Kode Jenis Anggota" class="form-control text-uppercase">
-                    </div>
-                    <label>Jenis Anggota: </label>
-                    <div class="form-group">
-                        <input type="text" required id="jenis-anggota" name="jenis-anggota" placeholder="Jenis Anggota" class="form-control text-capitalize">
-                    </div>
+                <div class="modal-body"><br>
+                  <input hidden type="text" id="kode-awal" name="kode-awal" class="form-control text-uppercase">
+                  <input hidden type="text" id="tipe" name="tipe" value="save" class="form-control">
+                    <fieldset class="form-label-group">
+                        <input type="text" class="form-control text-uppercase" name="kode-jenis-kegiatan" id="kode-jenis-anggota" maxlength="10" placeholder="Kode Jenis Anggota">
+                        <label for="kode-jenis-anggota">Kode Jenis Anggota :</label>
+                    </fieldset>
+                    <fieldset class="form-label-group">
+                        <input type="text" class="form-control text-uppercase" name="jenis-anggota" id="jenis-anggota" maxlength="10" placeholder="Jenis Anggota">
+                        <label for="jenis-anggota">Jenis Anggota :</label>
+                    </fieldset>
                 </div>
                 <div class="modal-footer">
                     <button type="submit" id="btn-submit" class="btn btn-primary">Simpan</button>

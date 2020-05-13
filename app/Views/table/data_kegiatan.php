@@ -1,21 +1,6 @@
 <section id="statistics-card">
     <div class="row">
-        <div class="col-xl-2 col-md-4 col-sm-6">
-            <div class="card text-center">
-                <div class="card-content">
-                    <div class="card-body">
-                        <div class="avatar bg-rgba-primary p-50 m-0 mb-1">
-                            <div class="avatar-content">
-                                <i class="feather icon-plus-square text-primary font-medium-5"></i>
-                            </div>
-                        </div>
-                        <h2 class="text-bold-700">36.9k</h2>
-                        <p class="mb-0 line-ellipsis">Baru Ditambahkan</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-2 col-md-4 col-sm-6">
+        <div class="col-xl-3 col-md-3 col-sm-6">
             <div class="card text-center">
                 <div class="card-content">
                     <div class="card-body">
@@ -30,7 +15,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-xl-2 col-md-4 col-sm-6">
+        <div class="col-xl-3 col-md-3 col-sm-6">
             <div class="card text-center">
                 <div class="card-content">
                     <div class="card-body">
@@ -45,7 +30,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-xl-2 col-md-4 col-sm-6">
+        <div class="col-xl-3 col-md-3 col-sm-6">
             <div class="card text-center">
                 <div class="card-content">
                     <div class="card-body">
@@ -60,7 +45,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-xl-2 col-md-4 col-sm-6">
+        <div class="col-xl-3 col-md-3 col-sm-6">
             <div class="card text-center">
                 <div class="card-content">
                     <div class="card-body">

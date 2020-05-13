@@ -15,4 +15,27 @@ class M_jenis_kegiatan extends Model
         }
     }
 
+    public function simpan($data)
+    {
+        if($this->db->table($this->table)->insert($data)){
+          return "true";
+        } else {
+          return "false";
+        }
+    }
+
+    public function ubah($data, $id)
+    {
+        return json_encode($this->db->table($this->table)->update($data,['id_jenis_kegiatan'=>$id]));
+    }
+
+    public function hapus($id)
+    {
+        if($this->delete($id)) {
+          return "true";
+        } else {
+          return "false";
+        }
+    }
+
 }

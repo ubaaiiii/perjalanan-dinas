@@ -1,17 +1,17 @@
-$('#judul-halaman').text('Tabel Jenis Anggota');
+$('#judul-halaman').text('Tabel Jenis Kegiatan');
 
 $(document).ready(function(){
-  var t_jenis_anggota = $('#tabel-jenis-anggota').DataTable({
+  var t_jenis_kegiatan = $('#tabel-jenis-kegiatan').DataTable({
       ajax:{
-          url: base_url() + "data/jenis_anggota/nya",
+          url: base_url() + "data/jenis_kegiatan/nya",
           type:"POST",
           dataSrc: ""
       },
       columns:[
-      {data:"id_jenis_anggota"},
-      {data:"id_jenis_anggota"},
-      {data:"jenis_anggota"},
-      {data:"id_jenis_anggota",
+      {data:"id_jenis_kegiatan"},
+      {data:"id_jenis_kegiatan"},
+      {data:"jenis_kegiatan"},
+      {data:"id_jenis_kegiatan",
        render: function(data,type,row){
          var actions = '<button type="button" id="edit" data-id="'+data+'" class="btn btn-icon rounded-circle btn-outline-warning mr-1 waves-effect waves-light" data-toggle="tooltip" data-placement="bottom" data-original-title="Ubah"><i class="feather icon-edit"></i></button>';
          actions = actions.concat('<button type="button" id="delete" data-id="'+data+'" class="btn btn-icon rounded-circle btn-outline-danger mr-1 waves-effect waves-light" data-toggle="tooltip" data-placement="bottom" data-original-title="Hapus"><i class="feather icon-trash"></i></button>');
@@ -19,7 +19,7 @@ $(document).ready(function(){
        }},
     ],
     fnDrawCallback: function (oSettings) {
-      $('#tabel-jenis-anggota tbody tr button').each(function () {
+      $('#tabel-jenis-kegiatan tbody tr button').each(function () {
         $(this).tooltip({
             html: true
         });
@@ -33,35 +33,35 @@ $(document).ready(function(){
     order: [ 1, 'asc' ],
   });
 
-  t_jenis_anggota.on( 'order.dt search.dt', function () {
-    t_jenis_anggota.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+  t_jenis_kegiatan.on( 'order.dt search.dt', function () {
+    t_jenis_kegiatan.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
       cell.innerHTML = i+1;
     });
   }).draw();
 
-  t_jenis_anggota.on('click', 'button#edit', function() {
+  t_jenis_kegiatan.on('click', 'button#edit', function() {
     $('#tipe').val('edit');
-    $('#label-modal').html('Ubah Jenis Anggota');
+    $('#label-modal').html('Ubah Jenis Kegiatan');
     var data = $(this).attr('data-id');
     $.ajax({
-      url: base_url() + "data/jenis_anggota/cari/" + data,
+      url: base_url() + "data/jenis_kegiatan/cari/" + data,
       type: "POST",
       success: function(data){
         data = JSON.parse(data);
-        $('#kode-awal').val(data.id_jenis_anggota);
-        $('#kode-jenis-anggota').val(data.id_jenis_anggota);
-        $('#jenis-anggota').val(data.jenis_anggota);
+        $('#kode-awal').val(data.id_jenis_kegiatan);
+        $('#kode-jenis-kegiatan').val(data.id_jenis_kegiatan);
+        $('#jenis-kegiatan').val(data.jenis_kegiatan);
 
         $('#btn-cancel').removeAttr('hidden');
         $('#btn-reset').attr('hidden',true);
         $('#btn-submit').html('Update');
 
-        $('#add-jenis-anggota').click();
+        $('#add-jenis-kegiatan').click();
       }
     })
   })
 
-  t_jenis_anggota.on('click', 'button#delete', function() {
+  t_jenis_kegiatan.on('click', 'button#delete', function() {
     var data = $(this).attr('data-id');
     Swal.fire({
       title: 'Apa Anda yakin?',
@@ -78,29 +78,29 @@ $(document).ready(function(){
     }).then(function (result) {
       if (result.value) {
         $.ajax({
-          url: base_url() + "data/jenis_anggota/delete/" + data,
+          url: base_url() + "data/jenis_kegiatan/delete/" + data,
           type: "POST",
           success: function(data) {
             Swal.fire(
               {
                 type: "success",
                 title: 'Terhapus!',
-                text: 'Data jenis anggota telah dihapus.',
+                text: 'Data jenis kegiatan telah dihapus.',
                 confirmButtonClass: 'btn btn-primary',
               }
             );
-            t_jenis_anggota.ajax.reload();
+            t_jenis_kegiatan.ajax.reload();
           }
         })
       }
     })
   })
-
+  //
   $('#form-submit').submit(function(e){
     e.preventDefault();
     var datanya = $(this).serialize();
     var tipe = $('#tipe').val();
-    console.log(datanya);
+    // console.log(datanya);
     $('#btn-submit').attr('disabled',true);
     if (tipe == "save") {
       var kata1 = "ditambahkan";
@@ -109,14 +109,16 @@ $(document).ready(function(){
       var kata1 = "diubah";
       $('#btn-submit').html('<span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span> Updating...');
     }
-    var urlAjax = base_url() + "data/jenis_anggota/" + tipe;
-    console.log(urlAjax);
+    var urlAjax = base_url() + "data/jenis_kegiatan/" + tipe;
+    // console.log(urlAjax);
     $.ajax({
-      url: base_url() + "data/jenis_anggota/" + tipe,
+      url: urlAjax,
       data: datanya,
       type: "POST",
       success: function(data) {
         $('#btn-submit').removeAttr('disabled');
+        data = JSON.parse(data);
+        console.log(data);
         if (data == "exist") {
           $('#btn-submit').html('Simpan');
           Swal.fire({
@@ -130,20 +132,19 @@ $(document).ready(function(){
           $('#backdrop').modal('hide');
           Swal.fire({
             title: "Berhasil!",
-            text: "Data jenis anggota berhasil "+kata1+".",
+            text: "Data jenis kegiatan berhasil "+kata1+".",
             type: "success",
             confirmButtonClass: 'btn btn-primary',
             buttonsStyling: false,
           });
-          t_jenis_anggota.ajax.reload();
+          t_jenis_kegiatan.ajax.reload();
         }
-        console.log(data);
       }
     })
   })
 
   $('#backdrop').on('hidden.bs.modal', function() {
-    $('#label-modal').html('Jenis Anggota Baru');
+    $('#label-modal').html('Jenis Kegiatan Baru');
   });
 
 })

@@ -26,7 +26,7 @@ class Data extends BaseController
 			echo json_encode($modelnya->ubah($data, $this->request->getPost('kode-awal')));
 		}
 
-		else if ($tipe == "hapus") {
+		else if ($tipe == "delete") {
 			echo json_encode($modelnya->hapus($id));
 		}
 
@@ -39,9 +39,32 @@ class Data extends BaseController
 	public function jenis_kegiatan($tipe = null, $id = null)
 	{
     $modelnya = model('App\Models\M_jenis_kegiatan', false);
-    if ($tipe == "") {
+		if ($tipe == "save") {
+			$data = array(
+				'id_jenis_kegiatan'	=> strtoupper($this->request->getPost('kode-jenis-kegiatan')),
+				'jenis_kegiatan' 		=> ucwords($this->request->getPost('jenis-kegiatan')),
+			);
+			$cekData = $modelnya->getJenisKegiatan($data['id_jenis_kegiatan']);
+			if ($cekData) {
+				echo "exist";
+			} else {
+				echo json_encode($modelnya->simpan($data));
+			}
+    }
 
-    } else {
+		else if ($tipe == "edit") {
+			$data = array(
+				'id_jenis_kegiatan'	=> strtoupper($this->request->getPost('kode-jenis-kegiatan')),
+				'jenis_kegiatan' 		=> ucwords($this->request->getPost('jenis-kegiatan')),
+			);
+			echo json_encode($modelnya->ubah($data, $this->request->getPost('kode-awal')));
+		}
+
+		else if ($tipe == "delete") {
+			echo json_encode($modelnya->hapus($id));
+		}
+
+		else {
       $datanya = $modelnya->getJenisKegiatan($id);
       echo json_encode($datanya);
     }
@@ -50,9 +73,32 @@ class Data extends BaseController
 	public function anggota($tipe = null, $id = null)
 	{
     $modelnya = model('App\Models\M_anggota', false);
-    if ($tipe == "") {
+		if ($tipe == "save") {
+			$data = array(
+				'id_anggota'	=> strtoupper($this->request->getPost('id-anggota')),
+				'anggota' 		=> ucwords($this->request->getPost('jenis-kegiatan')),
+			);
+			$cekData = $modelnya->getAnggota($data['id_anggota']);
+			if ($cekData) {
+				echo "exist";
+			} else {
+				echo json_encode($modelnya->simpan($data));
+			}
+    }
 
-    } else {
+		else if ($tipe == "edit") {
+			$data = array(
+				'id_anggota'	=> strtoupper($this->request->getPost('id-anggota')),
+				'anggota' 		=> ucwords($this->request->getPost('jenis-kegiatan')),
+			);
+			echo json_encode($modelnya->ubah($data, $this->request->getPost('kode-awal')));
+		}
+
+		else if ($tipe == "delete") {
+			echo json_encode($modelnya->hapus($id));
+		}
+
+		else {
       $datanya = $modelnya->getAnggota($id);
       echo json_encode($datanya);
     }
