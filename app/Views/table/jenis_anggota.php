@@ -29,11 +29,11 @@
     </div>
 </section>
 
-<div class="modal fade text-left" id="backdrop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel4" aria-hidden="true">
+<div class="modal fade text-left" id="backdrop" tabindex="-1" role="dialog" aria-labelledby="label-modal" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
         <div class="modal-content">
             <div class="modal-header bg-primary white">
-                <h4 class="modal-title" id="myModalLabel4">Jenis Anggota Baru</h4>
+                <h4 class="modal-title" id="label-modal">Jenis Anggota Baru</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>

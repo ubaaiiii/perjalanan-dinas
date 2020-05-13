@@ -7,8 +7,8 @@ class Data extends BaseController
     $modelnya = model('App\Models\M_jenis_anggota', false);
     if ($tipe == "save") {
 			$data = array(
-				'id_jenis_anggota' => strtoupper($this->request->getPost('kode-jenis-anggota')),
-				'jenis_anggota' => ucwords($this->request->getPost('jenis-anggota')),
+				'id_jenis_anggota'	=> strtoupper($this->request->getPost('kode-jenis-anggota')),
+				'jenis_anggota' 		=> ucwords($this->request->getPost('jenis-anggota')),
 			);
 			$cekData = $modelnya->getJenisAnggota($data['id_jenis_anggota']);
 			if ($cekData) {
@@ -19,7 +19,11 @@ class Data extends BaseController
     }
 
 		else if ($tipe == "edit") {
-
+			$data = array(
+				'id_jenis_anggota'	=> strtoupper($this->request->getPost('kode-jenis-anggota')),
+				'jenis_anggota' 		=> ucwords($this->request->getPost('jenis-anggota')),
+			);
+			echo json_encode($modelnya->ubah($data, $this->request->getPost('kode-awal')));
 		}
 
 		else if ($tipe == "hapus") {

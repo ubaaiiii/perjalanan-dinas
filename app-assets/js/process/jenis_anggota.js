@@ -40,8 +40,8 @@ $(document).ready(function(){
   }).draw();
 
   t_jenis_anggota.on('click', 'button#edit', function() {
-    // console.log($(this).attr('data-id'));
     $('#tipe').val('edit');
+    $('#label-modal').html('Ubah Jenis Anggota');
     var data = $(this).attr('data-id');
     $.ajax({
       url: base_url() + "data/jenis_anggota/cari/" + data,
@@ -126,7 +126,7 @@ $(document).ready(function(){
             confirmButtonClass: 'btn btn-primary',
             buttonsStyling: false,
           });
-        } else {
+        } else if (data == "true") {
           $('#backdrop').modal('hide');
           Swal.fire({
             title: "Berhasil!",
@@ -141,5 +141,9 @@ $(document).ready(function(){
       }
     })
   })
+
+  $('#backdrop').on('hidden.bs.modal', function() {
+    $('#label-modal').html('Jenis Anggota Baru');
+  });
 
 })

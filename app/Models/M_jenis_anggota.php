@@ -18,15 +18,20 @@ class M_jenis_anggota extends Model
     public function simpan($data)
     {
         $query = $this->db->table($this->table)->insert($data);
-        return true;
+        return "true";
+    }
+
+    public function ubah($data, $id)
+    {
+        return $this->db->table($this->table)->update($data,['id_jenis_anggota'=>$id]);
     }
 
     public function hapus($id)
     {
         if($this->delete($id)) {
-          return true;
+          return "true";
         } else {
-          return false;
+          return "false";
         }
     }
 
