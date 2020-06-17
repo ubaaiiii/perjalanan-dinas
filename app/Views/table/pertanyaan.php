@@ -52,7 +52,7 @@
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary">Simpan</button>
                     <button hidden type="button" id="btn-update" class="btn btn-success">Update</button>
-                    <button type="reset" id="btn-update" class="btn btn-warning">Reset</button>
+                    <button type="reset" id="btn-reset" class="btn btn-warning">Reset</button>
                 </div>
             </form>
         </div>

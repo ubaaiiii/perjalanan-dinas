@@ -38,7 +38,7 @@
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/app-assets/css/pages/error.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/app-assets/css/pages/dashboard-analytics.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/app-assets/css/pages/card-analytics.css">
-    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/app-assets/css/plugins/tour/tour.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/app-assets/css/plugins/forms/wizard.css">
     <!-- END: Page CSS-->
 
     <!-- BEGIN: Custom CSS-->
@@ -277,7 +277,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item" data-menu="dropdown"><a class="nav-link" href="<?= base_url('home/monitoring'); ?>"><i class="feather icon-layout"></i><span>Monitoring Data</span></a>
+                    <li class="nav-item" data-menu="dropdown"><a class="nav-link" href="<?= base_url('home/monitoring'); ?>"><i class="feather icon-layout"></i><span>Data Kegiatan</span></a>
                     </li>
                     <li class="nav-item" data-menu="dropdown"><a class="nav-link" href="<?= base_url('home/laporan'); ?>"><i class="feather icon-file-text"></i><span>Data Laporan</span></a>
                     </li>
@@ -338,6 +338,8 @@
     <script src="<?= base_url(); ?>/app-assets/vendors/js/maxlength/bootstrap-maxlength.js"></script>
     <script src="<?= base_url(); ?>/app-assets/vendors/js/forms/select/select2.full.min.js"></script>
     <script src="<?= base_url(); ?>/app-assets/vendors/js/extensions/sweetalert2.all.min.js"></script>
+    <script src="<?= base_url(); ?>/app-assets/vendors/js/extensions/jquery.steps.min.js"></script>
+    <script src="<?= base_url(); ?>/app-assets/vendors/js/forms/validation/jquery.validate.min.js"></script>
     <!-- END: Page Vendor JS-->
 
     <!-- BEGIN: Theme JS-->
@@ -351,6 +353,7 @@
     <script src="<?= base_url(); ?>/app-assets/js/scripts/datatables/datatable.js"></script>
     <script src="<?= base_url(); ?>/app-assets/js/scripts/forms/select/form-select2.js"></script>
     <script src="<?= base_url(); ?>/app-assets/js/scripts/extensions/sweet-alerts.js"></script>
+    <script src="<?= base_url(); ?>/app-assets/js/scripts/forms/wizard-steps.js"></script>
     <!-- END: Page JS-->
     <script>
       $(document).ready(function(){
