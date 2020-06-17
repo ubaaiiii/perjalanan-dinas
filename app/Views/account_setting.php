@@ -130,35 +130,40 @@
                               <form>
                                   <div class="row">
                                       <div class="col-12">
-                                          <div class="form-group">
-                                              <div class="controls">
-                                                  <label for="question-password">Masukkan password untuk melihat:</label>
-                                                  <input type="password" name="question-password" class="form-control" id="question-password" required placeholder="Password">
-                                              </div>
-                                          </div>
+                                        <div class="form-group">
+                                            <label for="password-icon">Masukkan Password Untuk Melihat</label>
+                                            <div class="position-relative has-icon-left">
+                                                <input type="password" id="question-password" class="form-control" name="question-password" placeholder="Password">
+                                                <div class="form-control-position">
+                                                    <a class=""><i class="feather icon-lock"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
                                       </div>
-                                      <div class="col-12">
-                                          <div class="form-group">
-                                              <div class="controls">
-                                                  <label for="account-new-password">Pertanyaan Keamanan</label>
-                                                  <select required class="select2 form-control" id="select-pertanyaan" name="pertanyaan-keamanan">
-                                                      <option value="square">Square</option>
-                                                  </select>
-                                              </div>
-                                          </div>
-                                      </div>
-                                      <div class="col-12">
-                                          <div class="form-group">
-                                              <div class="controls">
-                                                  <label for="account-retype-new-password">Jawaban Anda</label>
-                                                  <input type="text" name="con-password" class="form-control" required id="account-retype-new-password" placeholder="Jawaban Anda">
-                                              </div>
-                                          </div>
-                                      </div>
-                                      <div class="col-12 d-flex flex-sm-row flex-column justify-content-end">
+                                      <fieldset id="field-pertanyaan-keamanan" style="display:none;">
+                                        <div class="col-12">
+                                            <div class="form-group">
+                                                <div class="controls">
+                                                    <label for="account-new-password">Pertanyaan Keamanan</label>
+                                                    <select required class="select2 form-control" id="select-pertanyaan" name="pertanyaan-keamanan">
+                                                        <option value="square">Square</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-group">
+                                                <div class="controls">
+                                                    <label for="account-retype-new-password">Jawaban Anda</label>
+                                                    <input type="text" name="con-password" class="form-control" required id="account-retype-new-password" placeholder="Jawaban Anda">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 d-flex flex-sm-row flex-column justify-content-end">
                                           <button type="submit" class="btn btn-primary mr-sm-1 mb-1 mb-sm-0">Update</button>
                                           <button type="reset" class="btn btn-outline-warning">Batal</button>
-                                      </div>
+                                        </div>
+                                      </fieldset>
                                   </div>
                               </form>
                             </div>

@@ -4,7 +4,11 @@ class Auth extends BaseController
 {
 	public function index()   // cek session
 	{
-		return view('welcome_message');
+		$data = array(
+				'lokasi' => 'Home',
+				'content' => 'dashboard',
+		);
+		return view('home',$data);
 	}
 
 	public function login()  // cek login

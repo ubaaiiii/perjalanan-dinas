@@ -43,7 +43,7 @@ class Home extends BaseController
 	public function monitoring()
 	{
 		$data = array(
-				'lokasi'	=> 'Data Kegiatan',
+				'lokasi'	=> 'Monitoring Data',
 				'content' => 'table/data_kegiatan',
 		);
 		return view('home',$data);
@@ -63,7 +63,7 @@ class Home extends BaseController
 		$model = new M_pertanyaan();
 		$data = array(
 				'dataPertanyaan'	=> $model->getPertanyaan(),
-				'lokasi'	=> 'Data Pertanyaan',
+				'lokasi'	=> 'Pertanyaan Keamanan',
 				'content' => 'table/pertanyaan',
 		);
 		return view('home',$data);

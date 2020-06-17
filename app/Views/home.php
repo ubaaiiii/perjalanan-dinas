@@ -20,7 +20,6 @@
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/app-assets/vendors/css/tables/datatable/datatables.min.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/app-assets/vendors/css/extensions/tether-theme-arrows.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/app-assets/vendors/css/extensions/tether.min.css">
-    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/app-assets/vendors/css/extensions/shepherd-theme-default.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/app-assets/vendors/css/forms/select/select2.min.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/app-assets/vendors/css/extensions/sweetalert2.min.css">
     <!-- END: Vendor CSS-->
@@ -264,23 +263,23 @@
             <div class="navbar-container main-menu-content" data-menu="menu-container">
                 <!-- include <?= base_url(); ?>/includes/mixins-->
                 <ul class="nav navbar-nav" id="main-menu-navigation" data-menu="menu-navigation">
-                    <li class="nav-item" data-menu="dropdown"><a class="nav-link" href="<?= base_url('home'); ?>"><i class="feather icon-home"></i><span data-i18n="Home">Home</span></a>
+                    <li class="nav-item" data-menu="dropdown"><a class="nav-link" href="<?= base_url('home'); ?>"><i class="feather icon-home"></i><span>Home</span></a>
                     </li>
-                    <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown"><i class="feather icon-package"></i><span data-i18n="Master">Master</span></a>
+                    <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown"><i class="feather icon-package"></i><span>Master</span></a>
                         <ul class="dropdown-menu">
-                            <li data-menu=""><a class="dropdown-item" href="<?= base_url('home/jenis_anggota'); ?>" data-toggle="dropdown" data-i18n="Email"><i class="feather icon-user-check"></i>Jenis Anggota</a>
+                            <li data-menu=""><a class="dropdown-item" href="<?= base_url('home/jenis_anggota'); ?>" data-toggle="dropdown"><i class="feather icon-user-check"></i>Jenis Anggota</a>
                             </li>
-                            <li data-menu=""><a class="dropdown-item" href="<?= base_url('home/jenis_kegiatan'); ?>" data-toggle="dropdown" data-i18n="Jenis Kegiatan"><i class="feather icon-check-square"></i>Jenis Kegiatan</a>
+                            <li data-menu=""><a class="dropdown-item" href="<?= base_url('home/jenis_kegiatan'); ?>" data-toggle="dropdown"><i class="feather icon-check-square"></i>Jenis Kegiatan</a>
                             </li>
-                            <li data-menu=""><a class="dropdown-item" href="<?= base_url('home/data_anggota'); ?>" data-toggle="dropdown" data-i18n="Data Anggota"><i class="feather icon-users"></i>Data Anggota</a>
+                            <li data-menu=""><a class="dropdown-item" href="<?= base_url('home/data_anggota'); ?>" data-toggle="dropdown"><i class="feather icon-users"></i>Data Anggota</a>
                             </li>
-                            <li data-menu=""><a class="dropdown-item" href="<?= base_url('home/pertanyaan_keamanan'); ?>" data-toggle="dropdown" data-i18n="Data Anggota"><i class="feather icon-alert-circle"></i>Pertanyaan Keamanan</a>
+                            <li data-menu=""><a class="dropdown-item" href="<?= base_url('home/pertanyaan_keamanan'); ?>" data-toggle="dropdown"><i class="feather icon-alert-circle"></i>Pertanyaan Keamanan</a>
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item" data-menu="dropdown"><a class="nav-link" href="<?= base_url('home/monitoring'); ?>"><i class="feather icon-layout"></i><span data-i18n="Monitoring Data">Monitoring Data</span></a>
+                    <li class="nav-item" data-menu="dropdown"><a class="nav-link" href="<?= base_url('home/monitoring'); ?>"><i class="feather icon-layout"></i><span>Monitoring Data</span></a>
                     </li>
-                    <li class="nav-item" data-menu="dropdown"><a class="nav-link" href="<?= base_url('home/laporan'); ?>"><i class="feather icon-file-text"></i><span data-i18n="Laporan">Laporan</span></a>
+                    <li class="nav-item" data-menu="dropdown"><a class="nav-link" href="<?= base_url('home/laporan'); ?>"><i class="feather icon-file-text"></i><span>Data Laporan</span></a>
                     </li>
                 </ul>
             </div>
@@ -336,7 +335,6 @@
     <script src="<?= base_url(); ?>/app-assets/vendors/js/tables/datatable/datatables.bootstrap4.min.js"></script>
     <script src="<?= base_url(); ?>/app-assets/vendors/js/charts/apexcharts.min.js"></script>
     <script src="<?= base_url(); ?>/app-assets/vendors/js/extensions/tether.min.js"></script>
-    <script src="<?= base_url(); ?>/app-assets/vendors/js/extensions/shepherd.min.js"></script>
     <script src="<?= base_url(); ?>/app-assets/vendors/js/maxlength/bootstrap-maxlength.js"></script>
     <script src="<?= base_url(); ?>/app-assets/vendors/js/forms/select/select2.full.min.js"></script>
     <script src="<?= base_url(); ?>/app-assets/vendors/js/extensions/sweetalert2.all.min.js"></script>
@@ -356,7 +354,11 @@
     <!-- END: Page JS-->
     <script>
       $(document).ready(function(){
-        $('li:contains(<?=$lokasi;?>)').addClass("active");
+        setTimeout(function(){
+            $('li.nav-item:contains("<?=$lokasi;?>")').addClass("active");
+            $('li[data-menu]:contains("<?=$lokasi;?>")').addClass("active");
+            $('li[data-menu="dropdown-submenu"]:contains("<?=$lokasi;?>")').addClass("sidebar-group-active active open");
+        },64);
         $('input[maxlength]').maxlength();
 
         $('#backdrop').on('hidden.bs.modal', function() {
@@ -371,5 +373,4 @@
 
 </body>
 <!-- END: Body-->
-
 </html>
